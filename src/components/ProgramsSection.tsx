@@ -5,25 +5,29 @@ const programs = [
     icon: Globe,
     title: "Development Innovation & Sustainability",
     abbr: "DIS",
-    description: "Addressing complex development challenges through innovative and interdisciplinary approaches.",
+    description:
+      "Addressing complex development challenges through innovative and interdisciplinary approaches.",
   },
   {
     icon: Users,
     title: "Gender and Development Studies",
     abbr: "GDS",
-    description: "Advancing gender equality and social justice through critical analysis and action-oriented research.",
+    description:
+      "Advancing gender equality and social justice through critical analysis and action-oriented research.",
   },
   {
     icon: BookOpen,
     title: "Public Policy",
     abbr: "PP",
-    description: "Shaping effective public policies for governance, sustainability, and inclusive development.",
+    description:
+      "Shaping effective public policies for governance, sustainability, and inclusive development.",
   },
   {
     icon: Award,
     title: "Degree Offerings",
     abbr: "",
-    description: "Master's and Doctoral programs designed for aspiring scholars and professionals.",
+    description:
+      "Master's and Doctoral programs designed for aspiring scholars and professionals.",
   },
 ];
 
@@ -32,10 +36,13 @@ const ProgramsSection = () => {
     <section className="section-padding bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">What We Offer</p>
+          <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">
+            What We Offer
+          </p>
           <h2 className="section-title text-foreground">Academic Programs</h2>
           <p className="section-subtitle mx-auto mt-4">
-            Discover our interdisciplinary programs that prepare leaders to address the world's most pressing public policy challenges.
+            Discover our interdisciplinary programs that prepare leaders to
+            address the world's most pressing public policy challenges.
           </p>
         </div>
 
@@ -49,9 +56,11 @@ const ProgramsSection = () => {
                 <program.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
               {program.abbr && (
-                <span className="text-xs font-bold tracking-widest text-primary uppercase">{program.abbr}</span>
+                <span className="text-xs font-bold tracking-widest text-primary uppercase">
+                  {program.abbr}
+                </span>
               )}
-              <h3 className="font-heading text-xl font-semibold text-card-foreground mt-1 mb-3 leading-tight">
+              <h3 className="text-xl font-semibold text-card-foreground mt-1 mb-3 leading-tight">
                 {program.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

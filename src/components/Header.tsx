@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import aitLogo from "@/assets/ait-logo.png";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -63,19 +64,34 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+        scrolled ? "bg-card/95 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className={`font-heading font-bold text-xl md:text-2xl transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
-            AIT
+          <div>
+            <img
+              src={aitLogo}
+              className="h-12 w-12"
+              style={{
+                filter: scrolled
+                  ? "none"
+                  : "brightness(0) saturate(100%) invert(1)",
+              }}
+            />
           </div>
-          <div className={`hidden sm:block text-xs leading-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            Faculty of<br />Public Policy
+          <div>
+            <div
+              className={`font-bold md:text-lg transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}
+            >
+              Faculty of Public Policy <br></br>& Sustainable Development
+            </div>
+            <div
+              className={`hidden sm:block text-xs leading-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+            >
+              Asian Institute of Technology (AIT)
+            </div>
           </div>
         </Link>
 
@@ -134,7 +150,11 @@ const Header = () => {
           className={`lg:hidden p-2 rounded-md transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
@@ -147,11 +167,17 @@ const Header = () => {
                 {item.children ? (
                   <>
                     <button
-                      onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                      onClick={() =>
+                        setOpenDropdown(
+                          openDropdown === item.label ? null : item.label,
+                        )
+                      }
                       className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-foreground hover:bg-primary-light rounded-md transition-colors"
                     >
                       {item.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} />
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
+                      />
                     </button>
                     {openDropdown === item.label && (
                       <div className="ml-4 border-l-2 border-primary/20 pl-4 space-y-1">

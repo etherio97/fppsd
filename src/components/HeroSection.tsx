@@ -1,4 +1,4 @@
-import heroCampus from "@/assets/hero-campus.jpg";
+import mainCover from "@/assets/main-cover.jpg";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroCampus}
+          src={mainCover}
           alt="AIT Campus aerial view"
           className="w-full h-full object-cover"
         />
@@ -19,17 +19,22 @@ const HeroSection = () => {
         <p className="text-primary-foreground/70 tracking-[0.3em] uppercase text-sm md:text-base mb-6 animate-fade-up font-body">
           Asian Institute of Technology
         </p>
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up-delay">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up-delay">
           Faculty of Public Policy
         </h1>
-        <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-4 animate-fade-up-delay italic font-heading">
-          "Empowering future leaders through innovative policy research and sustainable development"
+        <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-4 animate-fade-up-delay italic">
+          "Empowering future leaders through innovative policy research and
+          sustainable development"
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-up-delay-2">
           <Button variant="hero" size="lg" className="text-base px-8 py-6">
             Explore Programs
           </Button>
-          <Button variant="heroOutline" size="lg" className="text-base px-8 py-6">
+          <Button
+            variant="heroOutline"
+            size="lg"
+            className="text-base px-8 py-6"
+          >
             Learn More
           </Button>
         </div>

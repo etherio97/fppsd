@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -52,8 +52,8 @@
     --footer-fg: 120 10% 90%;
     --footer-muted: 120 8% 60%;
 
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    --font-heading: "Lora", Georgia, serif;
+    --font-body: "Lora", system-ui, sans-serif;
   }
 
   .dark {
@@ -102,7 +102,12 @@
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }

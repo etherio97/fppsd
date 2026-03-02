@@ -1,4 +1,11 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, ExternalLink } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  ExternalLink,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,9 +14,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About */}
           <div className="lg:col-span-2">
-            <h3 className="font-heading text-2xl font-bold mb-4">Faculty of Public Policy</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Faculty of Public Policy
+            </h3>
             <p className="text-footer-muted leading-relaxed mb-6 max-w-md">
-              Advancing knowledge and developing leaders for sustainable development, inclusive governance, and innovative public policy.
+              Advancing knowledge and developing leaders for sustainable
+              development, inclusive governance, and innovative public policy.
             </p>
             <div className="flex gap-3">
               <a
@@ -41,23 +51,61 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3 text-footer-muted text-sm">
-              <li><a href="#" className="hover:text-footer-foreground transition-colors">Academic Programs</a></li>
-              <li><a href="#" className="hover:text-footer-foreground transition-colors">Research</a></li>
-              <li><a href="#" className="hover:text-footer-foreground transition-colors">Admission</a></li>
-              <li><a href="#" className="hover:text-footer-foreground transition-colors">Scholarship</a></li>
-              <li><a href="#" className="hover:text-footer-foreground transition-colors">Student Life</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-footer-foreground transition-colors"
+                >
+                  Academic Programs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-footer-foreground transition-colors"
+                >
+                  Research
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-footer-foreground transition-colors"
+                >
+                  Admission
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-footer-foreground transition-colors"
+                >
+                  Scholarship
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-footer-foreground transition-colors"
+                >
+                  Student Life
+                </a>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-4 text-footer-muted text-sm">
               <li className="flex gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
-                <span>P.O. Box 4, 58 Moo 9, Km. 42, Paholyothin Highway, Klong Luang, Pathum Thani 12120 Thailand</span>
+                <span>
+                  P.O. Box 4, 58 Moo 9, Km. 42, Paholyothin Highway, Klong
+                  Luang, Pathum Thani 12120 Thailand
+                </span>
               </li>
               <li className="flex gap-3 items-center">
                 <Phone className="w-4 h-4 shrink-0 text-primary" />
@@ -65,7 +113,10 @@ const Footer = () => {
               </li>
               <li className="flex gap-3 items-center">
                 <Mail className="w-4 h-4 shrink-0 text-primary" />
-                <a href="mailto:dean_fpp@ait.asia" className="hover:text-footer-foreground transition-colors">
+                <a
+                  href="mailto:dean_fpp@ait.asia"
+                  className="hover:text-footer-foreground transition-colors"
+                >
                   dean_fpp@ait.asia
                 </a>
               </li>
@@ -74,7 +125,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-footer-foreground/10 mt-12 pt-8 text-center text-footer-muted text-sm">
-          <p>© {new Date().getFullYear()} Faculty of Public Policy, Asian Institute of Technology. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Faculty of Public Policy, Asian
+            Institute of Technology. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
