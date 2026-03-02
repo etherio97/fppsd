@@ -13,7 +13,8 @@ input,
 textarea,
 label,
 div,
-body {
+body,
+* {
   font-family: "Lato", sans-serif !important;
 }
 

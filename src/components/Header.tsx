@@ -8,7 +8,10 @@ const navItems = [
   {
     label: "Academic Programs",
     children: [
-      { label: "Development Innovation & Sustainability", href: "#" },
+      {
+        label: "Development Innovation & Sustainability",
+        href: "/development-innovation-and-sustainability",
+      },
       { label: "Gender and Development Studies", href: "#" },
       { label: "Public Policy", href: "#" },
       { label: "Degree Offerings", href: "#" },

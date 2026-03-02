@@ -52,7 +52,7 @@
     --footer-fg: 120 10% 90%;
     --footer-muted: 120 8% 60%;
 
-    --font-heading: "Lora", Georgia, serif;
+    --font-heading: "Lora", system-ui, sans-serif;
     --font-body: "Lora", system-ui, sans-serif;
   }
 
