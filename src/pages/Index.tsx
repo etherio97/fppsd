@@ -15,7 +15,7 @@ const programs = [
     abbr: "DIS",
     description:
       "Addressing complex development challenges through innovative and interdisciplinary approaches.",
-    href: "development-innovation-and-sustainability",
+    href: "/development-innovation-and-sustainability",
   },
   {
     icon: Users,
@@ -23,6 +23,7 @@ const programs = [
     abbr: "GDS",
     description:
       "Advancing gender equality and social justice through critical analysis and action-oriented research.",
+    href: "/gender-and-development-studies",
   },
   {
     icon: BookOpen,
@@ -30,13 +31,6 @@ const programs = [
     abbr: "PP",
     description:
       "Shaping effective public policies for governance, sustainability, and inclusive development.",
-  },
-  {
-    icon: Award,
-    title: "Degree Offerings",
-    abbr: "",
-    description:
-      "Master's and Doctoral programs designed for aspiring scholars and professionals.",
   },
 ];
 
@@ -105,7 +99,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {programs.map((program) => (
                 <Link
                   key={program.title}

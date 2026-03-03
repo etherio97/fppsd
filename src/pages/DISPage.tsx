@@ -3,6 +3,59 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import coverImage from "@/assets/cover-dis.jpg";
 import disImage1 from "@/assets/dis-1.avif";
+import devlopmentPlanningManagementImage from "@/assets/gds-human-right.avif";
+import migrationWorkImage from "@/assets/gds-MIGRATION-WORK-.avif";
+import povertyReductionImage from "@/assets/P1001020.avif";
+import developmentEconomicsImage from "@/assets/gds-GENDER-ANALYSIS-.avif";
+import institutionsNGOsImage from "@/assets/531007052_1172727471545110_4012304429138477296_n.avif";
+import urbanRuralImage from "@/assets/IMG_7018.avif";
+
+const focusAreas = [
+  {
+    title: "Development Planning & Management",
+    src: devlopmentPlanningManagementImage,
+  },
+  {
+    title: "Development Policy, and Governance",
+    src: migrationWorkImage,
+  },
+  {
+    title: "Poverty Reduction & Sustainable Livelihoods",
+    src: povertyReductionImage,
+  },
+  {
+    title: "Development Economics & Sustainability",
+    src: developmentEconomicsImage,
+  },
+  {
+    title: "Development, Equity, Inclusion & Social Justice",
+    src: urbanRuralImage,
+  },
+  {
+    title: "Institutions, NGOs & Development Management",
+    src: institutionsNGOsImage,
+  },
+  {
+    title: "Urban–Rural Linkages & Rural Revitalization",
+    src: urbanRuralImage,
+  },
+  {
+    title: "Socio-Ecological Systems & Resilience",
+    src: urbanRuralImage,
+  },
+  {
+    title: "Social Innovation & Sustainable Development",
+    src: urbanRuralImage,
+  },
+  {
+    title: "Sustainable Agriculture & Rural Development",
+    src: urbanRuralImage,
+  },
+  {
+    title: "Climate, Environmental & Social Justice",
+    src: urbanRuralImage,
+  },
+];
 
 const DISPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -11,6 +64,7 @@ const DISPage = () => {
     <div className="min-h-screen bg-background font-body">
       <Header />
       <main>
+        {/* hero section */}
         <section className="relative h-[60vh] min-h-[600px] flex items-center justify-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
@@ -26,6 +80,7 @@ const DISPage = () => {
           </div>
         </section>
 
+        {/* about */}
         <section className="section-padding bg-secondary/50 ">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -96,6 +151,7 @@ const DISPage = () => {
           </div>
         </section>
 
+        {/* areas of specialization */}
         <section className="section-padding bg-background">
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">
@@ -126,7 +182,28 @@ const DISPage = () => {
           </div>
         </section>
 
-        <section className="section-padding bg-secondary/50">
+        {/* focus area */}
+        <section className="section-padding  bg-secondary/50">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">Focus Area</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+              {focusAreas.map((area) => (
+                <div className="border border-border rounded-lg overflow-hidden transition hover:shadow-lg">
+                  <img
+                    src={area.src}
+                    className="w-full aspect-video object-fill -mt-1"
+                  />
+                  <div className="p-4">
+                    <h3 className="font-semibold mb-2 text-sm">{area.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* preferred background */}
+        <section className="section-padding">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
               <div>
@@ -151,7 +228,8 @@ const DISPage = () => {
           </div>
         </section>
 
-        <section className="section-padding">
+        {/* course structure */}
+        <section className="section-padding bg-secondary/50">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
               <div>

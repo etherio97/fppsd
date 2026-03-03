@@ -12,7 +12,10 @@ const navItems = [
         label: "Development Innovation & Sustainability",
         href: "/development-innovation-and-sustainability",
       },
-      { label: "Gender and Development Studies", href: "#" },
+      {
+        label: "Gender and Development Studies",
+        href: "/gender-and-development-studies",
+      },
       { label: "Public Policy", href: "#" },
       { label: "Degree Offerings", href: "#" },
     ],

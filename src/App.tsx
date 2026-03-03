@@ -3,9 +3,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/helpers/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import DISPage from "./pages/DISPage";
+import GDSPage from "./pages/GDSPage";
 
 const queryClient = new QueryClient();
 
@@ -15,12 +17,14 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route
             path="/development-innovation-and-sustainability"
             element={<DISPage />}
           />
+          <Route path="/gender-and-development-studies" element={<GDSPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
