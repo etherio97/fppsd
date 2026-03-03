@@ -1,13 +1,20 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Users, Globe, Award } from "lucide-react";
+import {
+  BookOpen,
+  Users,
+  Globe,
+  ExternalLink,
+  Expand,
+  ListCollapse,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import coverVideo from "@/assets/ait-video.mp4";
-import mainCover from "@/assets/main-cover.jpg";
 import missionImage from "@/assets/mission.avif";
 import visionImage from "@/assets/vision.avif";
 import deanPortrait from "@/assets/dean.jpg";
+import { useState } from "react";
 
 const programs = [
   {
@@ -32,10 +39,13 @@ const programs = [
     abbr: "PP",
     description:
       "Shaping effective public policies for governance, sustainability, and inclusive development.",
+    href: "/public-policy",
   },
 ];
 
 const Index = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <div className="min-h-screen bg-background font-body">
       <Header />
@@ -43,10 +53,6 @@ const Index = () => {
         <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
-            {/* <img
-              src={mainCover}
-              className="w-full h-full object-cover"
-            /> */}
             <video
               autoPlay
               muted
@@ -74,16 +80,24 @@ const Index = () => {
               sustainable development"
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-up-delay-2">
-              <Button variant="hero" size="lg" className="text-base px-8 py-6">
-                Explore Programs
-              </Button>
-              <Button
-                variant="heroOutline"
-                size="lg"
-                className="text-base px-8 py-6"
-              >
-                Learn More
-              </Button>
+              <Link to="/academic-programs">
+                <Button
+                  variant="hero"
+                  size="lg"
+                  className="text-base px-8 py-6"
+                >
+                  Explore Programs
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button
+                  variant="heroOutline"
+                  size="lg"
+                  className="text-base px-8 py-6"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -95,6 +109,7 @@ const Index = () => {
           </div>
         </section>
 
+        {/* programs */}
         <section className="section-padding bg-background">
           <div className="container mx-auto">
             <div className="text-center mb-16">
@@ -182,47 +197,58 @@ const Index = () => {
                   warrant renewed public policy action to advance inclusion,
                   reduce inequality, and strengthen social justice.
                 </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  The establishment of the Faculty aligns closely with global
-                  efforts to strengthen evidence-informed policy making and
-                  institutional capacity, as promoted by the United Nations
-                  Development Programme (UNDP), the Organisation for Economic
-                  Co-operation and Development (OECD) through its Policy
-                  Coherence for Sustainable Development framework, and the World
-                  Bank. Social justice, gender equality, and inclusion further
-                  underpin the Faculty’s mandate, reflecting priorities advanced
-                  by UN Women. Regional and global policy responses to
-                  migration, displacement, and human security—led by the United
-                  Nations High Commissioner for Refugees (UNHCR) and the
-                  International Organization for Migration (IOM)—also inform the
-                  Faculty’s interdisciplinary focus. The Faculty, taking
-                  advantage of the locational benefit situated in Thailand, is
-                  committed to working closely with civil society organizations
-                  and community-based organizations across the Global South.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  The Faculty offers three closely integrated academic
-                  programs—Development, Innovation and Sustainability; Gender
-                  and Development Studies; and Public Policy—which together
-                  provide strong conceptual foundations, interdisciplinary
-                  perspectives, and analytical competencies. These programs
-                  prepare graduates for diverse career pathways as policy
-                  leaders and advisors, development and programme managers,
-                  practitioners, activists, and researchers in governments,
-                  international organizations, civil society, academic and
-                  research institutions, and the private sector.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  A defining strength of the Faculty is its ecosystem of
-                  interdisciplinary research initiatives and centers focusing on
-                  environmental sustainability, climate change, governance
-                  innovation, and social and gender inequality in regional and
-                  global contexts. These research platforms are embedded in
-                  teaching and supervision, enabling students to engage in
-                  research projects, field-based learning, policy analysis, and
-                  international collaboration, and to develop the capacity to
-                  bridge science, policy, and practice.
-                </p>
+                <div
+                  className={`transition-all duration-700 ease-in-out ${isExpanded ? "max-h-screen" : "max-h-0 overflow-hidden"}`}
+                >
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    The establishment of the Faculty aligns closely with global
+                    efforts to strengthen evidence-informed policy making and
+                    institutional capacity, as promoted by the United Nations
+                    Development Programme (UNDP), the Organisation for Economic
+                    Co-operation and Development (OECD) through its Policy
+                    Coherence for Sustainable Development framework, and the
+                    World Bank. Social justice, gender equality, and inclusion
+                    further underpin the Faculty’s mandate, reflecting
+                    priorities advanced by UN Women. Regional and global policy
+                    responses to migration, displacement, and human security—led
+                    by the United Nations High Commissioner for Refugees (UNHCR)
+                    and the International Organization for Migration (IOM)—also
+                    inform the Faculty’s interdisciplinary focus. The Faculty,
+                    taking advantage of the locational benefit situated in
+                    Thailand, is committed to working closely with civil society
+                    organizations and community-based organizations across the
+                    Global South.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    The Faculty offers three closely integrated academic
+                    programs—Development, Innovation and Sustainability; Gender
+                    and Development Studies; and Public Policy—which together
+                    provide strong conceptual foundations, interdisciplinary
+                    perspectives, and analytical competencies. These programs
+                    prepare graduates for diverse career pathways as policy
+                    leaders and advisors, development and programme managers,
+                    practitioners, activists, and researchers in governments,
+                    international organizations, civil society, academic and
+                    research institutions, and the private sector.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    A defining strength of the Faculty is its ecosystem of
+                    interdisciplinary research initiatives and centers focusing
+                    on environmental sustainability, climate change, governance
+                    innovation, and social and gender inequality in regional and
+                    global contexts. These research platforms are embedded in
+                    teaching and supervision, enabling students to engage in
+                    research projects, field-based learning, policy analysis,
+                    and international collaboration, and to develop the capacity
+                    to bridge science, policy, and practice.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="text-primary hover:text-primary/80 font-semibold transition-colors"
+                >
+                  {isExpanded ? "Read Less" : "Read More"}
+                </button>
               </div>
             </div>
           </div>
@@ -375,6 +401,15 @@ const Index = () => {
                   Dean, Faculty of Public Policy and Sustainable Development
                 </p>
                 <div className="mt-4 w-24 h-0.5 bg-primary/30 mx-auto" />
+                <a
+                  href="https://ait.ac.th/people/dr-thi-phuoc-lai-nguyen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="mt-4">
+                    View Details <ExternalLink className="ml-2 w-4 h-4" />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

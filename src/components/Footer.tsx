@@ -5,7 +5,9 @@ import {
   Facebook,
   Instagram,
   ExternalLink,
+  Earth,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,11 +17,10 @@ const Footer = () => {
           {/* About */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold mb-4">
-              Faculty of Public Policy
+              Faculty of Public Policy & Sustainable Development
             </h3>
             <p className="text-footer-muted leading-relaxed mb-6 max-w-md">
-              Advancing knowledge and developing leaders for sustainable
-              development, inclusive governance, and innovative public policy.
+              Asian Institute of Technology (AIT)
             </p>
             <div className="flex gap-3">
               <a
@@ -44,7 +45,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-footer-foreground/10 flex items-center justify-center hover:bg-primary transition-colors"
               >
-                <ExternalLink className="w-4 h-4" />
+                <Earth className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -54,44 +55,54 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3 text-footer-muted text-sm">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/academic-programs"
                   className="hover:text-footer-foreground transition-colors"
                 >
                   Academic Programs
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/research"
                   className="hover:text-footer-foreground transition-colors"
                 >
                   Research
-                </a>
+                </Link>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://ait.ac.th/admissions/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-footer-foreground transition-colors"
                 >
-                  Admission
+                  <span className="flex items-center gap-1">
+                    Admission
+                    <ExternalLink className="w-3 h-3 ml-1" />
+                  </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://ait.ac.th/financial-aid/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-footer-foreground transition-colors"
                 >
-                  Scholarship
+                  <span className="flex items-center gap-1">
+                    Scholarship
+                    <ExternalLink className="w-3 h-3 ml-1" />
+                  </span>
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/student-life"
                   className="hover:text-footer-foreground transition-colors"
                 >
                   Student Life
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -126,8 +137,8 @@ const Footer = () => {
 
         <div className="border-t border-footer-foreground/10 mt-12 pt-8 text-center text-footer-muted text-sm">
           <p>
-            © {new Date().getFullYear()} Faculty of Public Policy, Asian
-            Institute of Technology. All rights reserved.
+            © {new Date().getFullYear()} Faculty of Public Policy & Sustainable
+            Development, Asian Institute of Technology. All rights reserved.
           </p>
         </div>
       </div>

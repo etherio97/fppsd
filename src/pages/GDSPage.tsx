@@ -46,7 +46,7 @@ const focusAreas = [
   },
 ];
 
-const DISPage = () => {
+const GDSPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -270,4 +270,4 @@ const DISPage = () => {
   );
 };
 
-export default DISPage;
+export default GDSPage;

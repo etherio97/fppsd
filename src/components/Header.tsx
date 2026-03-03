@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import aitLogo from "@/assets/ait-logo.png";
 
 const navItems = [
@@ -16,44 +16,70 @@ const navItems = [
         label: "Gender and Development Studies",
         href: "/gender-and-development-studies",
       },
-      { label: "Public Policy", href: "#" },
-      { label: "Degree Offerings", href: "#" },
+      { label: "Public Policy", href: "/public-policy" },
+      { label: "Degree Offerings", href: "/degree-offerings" },
     ],
   },
   {
     label: "Research",
     children: [
-      { label: "Research Projects", href: "#" },
-      { label: "Research Center", href: "#" },
-      { label: "Student Research Highlights", href: "#" },
+      { label: "Research Projects", href: "/research-projects" },
+      { label: "Research Center", href: "/research-center" },
+      {
+        label: "Student Research Highlights",
+        href: "/student-research-highlights",
+      },
     ],
   },
   {
     label: "Journal & Publications",
     children: [
-      { label: "GDS-GTD Journal", href: "#" },
-      { label: "Faculty in Journal Editorial", href: "#" },
-      { label: "Faculty Publications", href: "#" },
-      { label: "Student Publications", href: "#" },
+      { label: "GDS-GTD Journal", href: "/gds-gtd-journal" },
+      {
+        label: "Faculty in Journal Editorial",
+        href: "/faculty-in-journal-editorial",
+      },
+      { label: "Faculty Publications", href: "/faculty-publications" },
+      { label: "Student Publications", href: "/student-publications" },
     ],
   },
   {
     label: "Admission & Scholarship",
     children: [
-      { label: "Admission", href: "#" },
-      { label: "Tuition Fee", href: "#" },
-      { label: "Online Application", href: "#" },
-      { label: "Scholarship", href: "#" },
+      {
+        label: "Admission",
+        href: "https://ait.ac.th/admissions/",
+        external: true,
+      },
+      {
+        label: "Tuition Fee",
+        href: "https://ait.ac.th/tuition-and-fees/",
+        external: true,
+      },
+      {
+        label: "Online Application",
+        href: "https://admission.ait.ac.th/aoas/Applicant/FirstPage.aspx",
+        external: true,
+      },
+      {
+        label: "Scholarship",
+        href: "https://ait.ac.th/financial-aid/",
+        external: true,
+      },
     ],
   },
   {
     label: "Student Life",
     children: [
-      { label: "Student Housing", href: "#" },
-      { label: "Student Opportunities", href: "#" },
+      {
+        label: "Student Housing",
+        href: "https://ait.ac.th/student-housing/",
+        external: true,
+      },
+      { label: "Student Opportunities", href: "/student-opportunities" },
     ],
   },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const Header = () => {
@@ -96,7 +122,7 @@ const Header = () => {
             <div
               className={`hidden sm:block text-xs leading-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
             >
-              Asian Institute of Technology (AIT)
+              Asian Institute of Technology
             </div>
           </div>
         </Link>
@@ -112,7 +138,7 @@ const Header = () => {
             >
               {item.children ? (
                 <button
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`max-w-[140px] flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     scrolled
                       ? "text-foreground hover:text-primary hover:bg-primary-light"
                       : "text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10"
@@ -124,7 +150,7 @@ const Header = () => {
               ) : (
                 <Link
                   to={item.href!}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  className={`max-w-[140px] px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     scrolled
                       ? "text-foreground hover:text-primary hover:bg-primary-light"
                       : "text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10"
@@ -136,15 +162,30 @@ const Header = () => {
 
               {item.children && openDropdown === item.label && (
                 <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-lg shadow-xl border border-border py-2 animate-fade-up">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.label}
-                      to={child.href}
-                      className="block px-4 py-2.5 text-sm text-foreground hover:bg-primary-light hover:text-primary transition-colors"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                  {item.children.map((child) =>
+                    child.external ? (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-4 py-2.5 text-sm text-foreground hover:bg-primary-light hover:text-primary transition-colors"
+                      >
+                        <div className="flex gap-1 justify-between">
+                          <span>{child.label}</span>
+                          <ExternalLink className="inline w-3 h-3 ml-1" />
+                        </div>
+                      </a>
+                    ) : (
+                      <Link
+                        key={child.label}
+                        to={child.href}
+                        className="block px-4 py-2.5 text-sm text-foreground hover:bg-primary-light hover:text-primary transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ),
+                  )}
                 </div>
               )}
             </div>

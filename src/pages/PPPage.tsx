@@ -57,7 +57,7 @@ const focusAreas = [
   },
 ];
 
-const DISPage = () => {
+const PPPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -75,7 +75,7 @@ const DISPage = () => {
           {/* Content */}
           <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up-delay">
-              Development Innovation and Sustainability (DIS)
+              Public Policy (PP)
             </h2>
           </div>
         </section>
@@ -272,4 +272,4 @@ const DISPage = () => {
   );
 };
 
-export default DISPage;
+export default PPPage;
