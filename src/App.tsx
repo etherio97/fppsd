@@ -11,6 +11,7 @@ import GDSPage from "./pages/GDSPage";
 import PPPage from "./pages/PPPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import AcademicProgramsPage from "./pages/AcademicProgramsPage";
+import DegreeOfferingsPage from "./pages/DegreeOfferingsPage";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/gender-and-development-studies" element={<GDSPage />} />
           <Route path="/public-policy" element={<PPPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
+          <Route path="/degree-offerings" element={<DegreeOfferingsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
