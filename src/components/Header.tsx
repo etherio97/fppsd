@@ -89,7 +89,7 @@ const Header = () => {
           </div>
           <div>
             <div
-              className={`font-bold md:text-lg transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}
+              className={`font-bold transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}
             >
               Faculty of Public Policy <br></br>& Sustainable Development
             </div>
