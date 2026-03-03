@@ -48,12 +48,16 @@ const Index = () => {
               className="w-full h-full object-cover"
             /> */}
             <video
-              src={coverVideo}
               autoPlay
               muted
               loop
+              playsInline
+              webkit-playsinline
               className="w-full h-full object-cover"
-            />
+            >
+              <source src={coverVideo} type="video/mp4" />
+            </video>
+
             <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary/60 to-primary-dark/90" />
           </div>
 
