@@ -2,11 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Globe, Award } from "lucide-react";
+import { Link } from "react-router-dom";
+import coverVideo from "@/assets/ait-video.mp4";
 import mainCover from "@/assets/main-cover.jpg";
 import missionImage from "@/assets/mission.avif";
 import visionImage from "@/assets/vision.avif";
 import deanPortrait from "@/assets/dean.jpg";
-import { Link } from "react-router-dom";
 
 const programs = [
   {
@@ -42,9 +43,15 @@ const Index = () => {
         <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img
+            {/* <img
               src={mainCover}
-              alt="AIT Campus aerial view"
+              className="w-full h-full object-cover"
+            /> */}
+            <video
+              src={coverVideo}
+              autoPlay
+              muted
+              loop
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary/60 to-primary-dark/90" />
